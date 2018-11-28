@@ -1,0 +1,71 @@
+<!-- Generic template inherited by other templates -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title %}{% endblock %}Foresite</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    {% load static %}
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/bulma.min.css' %}"/>-->
+    <link href="{% static 'images/logo.ico' %}" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link href="{% static 'css/all.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700,900" rel="stylesheet" />
+    <script src="{% static 'js/all.js' %}" type="text/javascript" defer></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}" type="text/javascript" defer></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}" type="text/javascript" defer></script>
+  </head>
+
+  <body>
+
+    <!-- Banner -->
+    <main class="jumbotron p-0">
+      <div class="container pr-sm-0 px-md-0">
+        <nav class="navbar navbar-expand-sm navbar-light bg-none py-4 pr-sm-0 px-md-0">
+          <a class="navbar-brand d-flex align-items-center ml-0" href="{% url 'index' %}">
+            <img class="brand-logo img-fluid mr-3" src="{% static 'images/logo.png' %}" alt="Logo" />
+            <span class="d-none d-lg-block h2 font-weight-bold text-white m-0">Foresite</span>
+          </a>
+
+    <!-- Navigation Bar
+    <nav class="navbar is-primary" role="navigation">
+      <div class="navbar-brand">
+        <a class="navbar-burger" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu is-active">
+        <div class="navbar-start">
+        </div>
+
+        <div class="navbar-end">
+          {% if user.is_authenticated %}
+            <a class="navbar-item">
+              Welcome, {{ user.username }}
+            </a>
+            <a class="navbar-item" href="{% url 'logout' %}">
+              Log Out
+            </a>
+          {% else %}
+            <a class="navbar-item" href="{% url 'login' %}">
+              Log In
+            </a>
+            <a class="navbar-item" href="{% url 'signup' %}">
+              Sign Up
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+     Navigation Bar end -->
+
+    {% block content %}
+    {% endblock %}
+
+  </body>
+</html>

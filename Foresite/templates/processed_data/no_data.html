@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Failed | {% endblock %}
+
+{% block content %}
+
+</nav>
+
+<!-- No Data Form -->
+<section class="mt-5 pt-md-5">
+  <div class="row">
+    <div class="col-12 col-sm-6">
+      <h1 class="text-white">
+        You don't have any data uploaded or it is not processed yet.
+      </h1>
+      <h1 class="text-white">
+        To upload a csv file, click <a class="text-white hover-info" href="{% url 'upload' %}">here</a>
+      </h1>
+    </div>
+  </div>
+</section>
+<!-- No Data Form end -->
+
+{% endblock %}

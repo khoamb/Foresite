@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Upload File | {% endblock %}
+
+{% block content %}
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+  <div id="navMenu" class="navbar-collapse collapse d-sm-flex justify-content-end text-right">
+    <ul class="navbar-nav h4 font-weight-bold">
+      {% if user.is_authenticated %}
+        <li class="nav-item"><a class="nav-link text-white">
+          Welcome, {{ user.username }}
+        </a></li>
+        <li class="nav-item ml-sm-4 ml-xl-5"><a class="nav-link text-white hover-info" href="{% url 'logout' %}">
+          Log Out
+        </a></li>
+      {% else %}
+        <li class="nav-item"><a class="nav-link text-white hover-info" href="{% url 'signup' %}">
+          Sign Up
+        </a></li>
+        <li class="nav-item ml-sm-4 ml-xl-5"><a class="nav-link text-white hover-info" href="{% url 'login' %}">
+          Log In
+        </a></li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
+
+<!-- Upload form. Note enctype attribute! -->
+<section class="mt-5 pt-md-5">
+  <div class="row">
+    <div class="col-12 col-sm-6">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Upload CSV File
+          </p>
+        </header>
+        <div class="card-content">
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="content">
+              <div class="field">
+                <div class="control">
+                  {{ form.csv_name }}
+                </div>
+              </div>
+              <br>
+              <div class="field">
+                <div class="control">
+                  {{ form.csv_file }}
+                </div>
+              </div>
+            </div>
+            <button class="button is-primary" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

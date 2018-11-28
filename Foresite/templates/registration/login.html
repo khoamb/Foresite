@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Log In | {% endblock %}
+
+{% block content %}
+
+</nav>
+
+<section class="container">
+	<div class="row">
+		<div class="col-10 col-lg-6">
+			<form class="mt-5 pt-md-5" method="post">
+        {% csrf_token %}
+				<div class="form-group mb-4">
+					{{ form.as_p }}
+				</div>
+				<div class="row">
+					<div class="col-8 offset-1 col-md-4 offset-md-0">
+						<button class="btn btn-info w-100" type="submit">Log In</button>
+					</div>
+					<div class="col-8 offset-1 col-md-4 offset-md-0">
+						<button class="btn btn-info w-100 d-none d-md-block" type="reset">Reset fields</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
+
+<!-- Login Form
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Log in
+          </p>
+        </header>
+        <div class="card-content">
+          <form method="post">
+            {% csrf_token %}
+            <div class="content">
+              <div class="field">
+                <div class="control">
+                  {{ form.as_p }}
+                </div>
+              </div>
+            </div>
+            <button class="button is-primary" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ Login Form end -->
+
+{% endblock %}

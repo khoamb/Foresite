@@ -1,0 +1,80 @@
+html {
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+.jumbotron {
+  height: 100%;
+  background-image: url('../images/banner.jpg');
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.brand-logo {
+  width: 4rem;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.hover-info:hover {
+  color: #17a2b8!important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+section a {
+  color: black;
+}
+
+section a:hover {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 576px) {
+  .jumbotron {
+    background-position: center;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  .jumbotron .display-4 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .jumbotron {
+    background-position: right top;
+  }
+}
+
+h1.navbar-brand {
+  font-size: 2rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+.no-hover {
+  color: #ffffff!important;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

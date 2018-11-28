@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Home | {% endblock %}
+
+{% block content %}
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+  <div id="navMenu" class="navbar-collapse collapse d-sm-flex justify-content-end text-right">
+    <ul class="navbar-nav h4 font-weight-bold">
+      {% if user.is_authenticated %}
+        <li class="nav-item"><a class="nav-link text-white">
+          Welcome, {{ user.username }}
+        </a></li>
+        <li class="nav-item ml-sm-4 ml-xl-5"><a class="nav-link text-white hover-info" href="{% url 'logout' %}">
+          Log Out
+        </a></li>
+      {% else %}
+        <li class="nav-item"><a class="nav-link text-white hover-info" href="{% url 'signup' %}">
+          Sign Up
+        </a></li>
+        <li class="nav-item ml-sm-4 ml-xl-5"><a class="nav-link text-white hover-info" href="{% url 'login' %}">
+          Log In
+        </a></li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
+
+<div class="row">
+  <div class="col-12 col-sm-6 text-center text-sm-left mt-sm-5 py-lg-5">
+    <h1 class="display-4 text-white mb-4">Demand forecasting using LSTM neural networks</h1>
+    <a class="btn btn-lg btn-info w-75" href="{% url 'signup' %}" role="button">Get Started</a>
+  </div>
+</div>
+</div>
+</main>
+
+<!-- Features -->
+<section class="py-5">
+<div class="container">
+<div>
+  <h2 class="display-4 font-weight-bold text-center mb-5">Sign up or log in to:</h2>
+</div>
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
+    <i class="far fa-keyboard fa-5x mb-3"></i>
+    <h3 class="h2">Enter Data</h3>
+    <p class="lead">Collect any historical data from a company and enter the data set in CSV format</p>
+  </div>
+  <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
+    <i class="fas fa-chart-line fa-5x mb-3"></i>
+    <h3 class="h2">Get Forecast</h3>
+    <p class="lead">Get a new forecast to predict future demand based on the entered data set</p>
+  </div>
+  <div class="col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-0 text-center mb-5">
+    <i class="fas fa-history fa-5x mb-3"></i>
+    <h3 class="h2">View History</h3>
+    <p class="lead">View your history of previous data and forecasts</p>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-secondary py-4">
+<div class="text-center text-white">&copy; 2018 Foresite <br /> All rights reserved</div>
+</footer>
+
+{% endblock %}
